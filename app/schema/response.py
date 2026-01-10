@@ -12,7 +12,7 @@ class BadResponse(BaseModel):
 
 class SlowResponse(BaseModel):
     status: str = 'ok'
-    delay_int: int
+    delay_ms: int
 
 
 class VersionResponse(BaseModel):
