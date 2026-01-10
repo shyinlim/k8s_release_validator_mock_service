@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "k8s-release-validator-mock-service"
+version = "0.1.0"
+description = ""
+authors = ["taurus5650 <taurus_5650@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.128.0"
+uvicorn = "^0.40.0"
+pytest = "^9.0.2"
+httpx = "^0.28.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
