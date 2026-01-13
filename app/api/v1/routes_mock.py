@@ -7,7 +7,7 @@ from app.schema.response import (
     SlowResponse,
     VersionResponse,
 )
-from app.services.mock_service import delay_response, get_version
+from app.service.mock_service import delay_response, get_version
 
 router = APIRouter()
 
