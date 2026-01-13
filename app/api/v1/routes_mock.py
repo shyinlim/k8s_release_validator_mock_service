@@ -28,7 +28,7 @@ async def bad() -> BadResponse:
 
 
 @router.get('/slow', response_model=SlowResponse)
-async def slow(ms: int = Query(default=500, ge=0, le=10000)) -> SlowResponse:
+async def slow(ms: int = Query(default=3000, ge=0, le=10000)) -> SlowResponse:
     """
     Return response after delay.
 

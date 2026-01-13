@@ -9,7 +9,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ ./app/
 
-ENV APP_VERSION=v1
-
 EXPOSE 7641
 
