@@ -23,7 +23,7 @@ async def bad() -> BadResponse:
     """Return 400 bad request."""
     return JSONResponse(
         status_code=400,
-        content=BadResponse.model_dump()
+        content=BadResponse().model_dump()
     )
 
 
