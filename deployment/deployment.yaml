@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment # Resource type: manages Pod lifecycle
+metadata:
+  name: mock-service
+  labels: # Label for identification and grouping
+    app: mock-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mock-service
+  template:
+    metadata:
+      labels:
+        app: mock-service
+    spec:
+      containers:
+        - name: mock-service
+          image: mock-service:local
+          ports:
+            - containerPort: 7641
+          env:
+            - name: APP_VERSION
+              value: 'v1'
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 7641
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 7641
+            initialDelaySeconds: 5
+            periodSeconds: 10
